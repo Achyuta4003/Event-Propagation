@@ -3,16 +3,20 @@ const form = document.querySelector("form")
 const button = document.querySelector("button")
 
 
-div.addEventListener("click", function () {
+div.addEventListener("click", function (event) {
+    event.stopPropagation()
     alert("div")
 })
 
 
-form.addEventListener("click", function () {
+form.addEventListener("click", function (event) {
+    event.stopPropagation()
     alert("form")
 })
 
 
-button.addEventListener("click", function () {
+button.addEventListener("click", function (event) {
+    event.stopPropagation()
+
     alert("button")
 })
