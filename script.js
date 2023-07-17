@@ -1,34 +1,18 @@
-// Q:Create Throttle() Pollyfill Implementation 
+const div = document.querySelector("div")
+const form = document.querySelector("form")
+const button = document.querySelector("button")
 
 
-const btn = document.querySelector(".increment_btn");
-const btnPress = document.querySelector(".increment_press");
-const count = document.querySelector(".increment_count");
+div.addEventListener("click", function () {
+    alert("div")
+})
 
 
-let pressCount = 0;
-let triggerCount = 0;
+form.addEventListener("click", function () {
+    alert("form")
+})
 
 
-// Throttle() Pollyfill
-const myThrottle = (cb, d) => {
-    let last = 0;
-
-    return (...args) => {
-        let now = new Date().getTime();
-        if (now - last < d) return;
-        last = now;
-
-        return cb(...args)
-    }
-}
-
-const throttleCount = myThrottle(() => {
-    count.innerHTML = ++triggerCount;
-}, 800)
-
-
-btn.addEventListener('click', () => {
-    btnPress.innerHTML = ++pressCount;
-    throttleCount()
+button.addEventListener("click", function () {
+    alert("button")
 })

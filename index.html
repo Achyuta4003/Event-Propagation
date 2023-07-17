@@ -7,36 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Box</title>
     <Style>
-        #container {
+        div,
+        form,
+        button {
             border: 2px solid red;
-            height: 600px;
-            width: 600px;
-            display: flex;
-            flex-direction: row;
-        }
-
-        .ball {
-            border: 2px solid black;
-            height: 60px;
-            width: 60px;
-            margin: 20px;
-            border-radius: 50px;
+            padding: 50px;
         }
     </Style>
 </head>
 
 <body>
 
-    <center>
+    <div>
+        <form>
+            <button>Button</button>
+        </form>
+    </div>
 
-        <button class="increment_btn">Increment</button>
-        <p>Button pressed <span class="increment_press">0</span> times. </p>
-        <p>Triggered <span class="increment_count">0</span> times. </p>
-
-
-
-        <script src="./script.js"></script>
-    </center>
+    <script src="./script.js"></script>
 
 </body>
 
