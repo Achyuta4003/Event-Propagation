@@ -1,4 +1,4 @@
-// Q:Create Debounce() Pollyfill Implementation 
+// Q:Create Throttle() Pollyfill Implementation 
 
 
 const btn = document.querySelector(".increment_btn");
@@ -10,25 +10,25 @@ let pressCount = 0;
 let triggerCount = 0;
 
 
-// Debounce() Pollyfill
-const myDebounce = (cb, d) => {
-    let timer;
-    return function (...args) {
+// Throttle() Pollyfill
+const myThrottle = (cb, d) => {
+    let last = 0;
 
-        if (timer) clearTimeout(timer);
+    return (...args) => {
+        let now = new Date().getTime();
+        if (now - last < d) return;
+        last = now;
 
-        timer = setTimeout(() => {
-            cb(...args)
-        }, d)
+        return cb(...args)
     }
 }
 
-const debounceCount = myDebounce(() => {
+const throttleCount = myThrottle(() => {
     count.innerHTML = ++triggerCount;
 }, 800)
 
 
 btn.addEventListener('click', () => {
     btnPress.innerHTML = ++pressCount;
-    debounceCount()
+    throttleCount()
 })
