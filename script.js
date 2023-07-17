@@ -1,22 +1,7 @@
-const div = document.querySelector("div")
-const form = document.querySelector("form")
-const button = document.querySelector("button")
+//event Delegation
 
-
-div.addEventListener("click", function (event) {
-    event.stopPropagation()
-    alert("div")
-})
-
-
-form.addEventListener("click", function (event) {
-    event.stopPropagation()
-    alert("form")
-})
-
-
-button.addEventListener("click", function (event) {
-    event.stopPropagation()
-
-    alert("button")
+document.querySelector(".products").addEventListener("click", (event) => {
+    if (event.target.tagName === "SPAN") {
+        window.location.href += "/" + event.target.className
+    }
 })

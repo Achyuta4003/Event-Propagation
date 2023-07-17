@@ -7,21 +7,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Box</title>
     <Style>
-        div,
-        form,
-        button {
-            border: 2px solid red;
-            padding: 50px;
+        .products {
+            display: grid;
+            grid-template-columns: 100px 100px 100px;
+            gap: 10px;
+
+        }
+
+        span {
+            width: 100px;
+            height: 100px;
+            background-color: wheat;
+            display: grid;
+            place-items: center;
         }
     </Style>
 </head>
 
 <body>
 
-    <div>
-        <form>
-            <button>Button</button>
-        </form>
+    <div class="products">
+        <span class="mobile">mobile</span>
+        <span class="laptop">laptop</span>
+        <span class="headphone">headphone</span>
+        <span class="speaker">speaker</span>
+        <span class="usb">usb</span>
+        <span class="tripod">tripod</span>
     </div>
 
     <script src="./script.js"></script>
